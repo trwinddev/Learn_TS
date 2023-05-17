@@ -1,5 +1,7 @@
 // const variable: dataTypes = value
 
+import { FinalProduct, Product, ProductNewFeature } from "./interfaces";
+
 export function total(a: number, b: number): void {
   a + b;
   // return a + b;
@@ -51,3 +53,16 @@ total(5, 7);
 //     console.log("Hello world !");
 //   }
 // };
+
+// interface
+
+const product: FinalProduct = {
+  name: "car",
+  brand: "bmw",
+  color: "red",
+};
+function addProduct(product: FinalProduct) {
+  //
+  product.name = "motorbike";
+}
+addProduct(product);

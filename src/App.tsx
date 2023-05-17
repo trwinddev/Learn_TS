@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Permission } from "./utils/enums";
 import { Age } from "./utils/types";
+import Card from "./components/Card";
 const reviews = [
   {
     name: "Phong",
@@ -64,6 +65,7 @@ function App() {
   }
   return (
     <div>
+      <Card></Card>
       <div className="review">
         <div className="review-image">
           <img src="https://source.unsplash.com/random" alt="" />
