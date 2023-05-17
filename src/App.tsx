@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Permission } from "./utils/enums";
+import { Age } from "./utils/types";
 const reviews = [
   {
     name: "Phong",
@@ -23,6 +25,11 @@ const reviews = [
   },
 ];
 
+// Permission
+// const ADMIN = "ADMIN";
+// const EDITOR = "EDITOR";
+// const MODERATOR = "MODERATOR";
+
 function App() {
   const [count, setCount] = useState(0);
 
@@ -30,17 +37,21 @@ function App() {
   const user: {
     firstName: string;
     lastName: string;
-    age: number;
+    age: Age;
     isStudent: boolean;
     school: string[];
     score: (number | string)[];
+    contact: [number, string];
+    permission: Permission;
   } = {
     firstName: "Ngo",
     lastName: "Trong",
-    age: 21,
+    age: "30",
     isStudent: true,
     school: ["Phenikaa", "PKA", "PU"],
     score: [10, 9, 8, "high"],
+    contact: [123456789, "phong@gmail.com"],
+    permission: Permission.ADMIN,
   };
 
   function displayReview(totalReviews: number, name: string, premium: boolean) {
