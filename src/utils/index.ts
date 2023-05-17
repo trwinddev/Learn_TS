@@ -29,3 +29,25 @@ total(5, 7);
  */
 // Function
 // Void
+// unknown
+// let aNumber: unknown;
+// aNumber = 100;
+// if (typeof aNumber === "number") {
+//   aNumber.toFixed(2);
+// }
+// const a = 100;
+// a.toFixed(2); // 100.00
+// never
+// contain no values
+// represent return type of a function throw error
+// function raiseError(err: string): never {
+//   throw new Error(err);
+// }
+// function reject() {
+//   return raiseError("error");
+// }
+// let loop = function forever() {
+//   while (true) {
+//     console.log("Hello world !");
+//   }
+// };
