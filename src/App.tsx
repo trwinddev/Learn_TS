@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 const reviews = [
   {
-    name: "Evondev",
+    name: "Phong",
     image: "",
     stars: 5,
     premiumUser: true,
@@ -24,6 +24,15 @@ const reviews = [
 ];
 function App() {
   const [count, setCount] = useState(0);
+
+  function displayReview(totalReviews: number, name: string, premium: boolean) {
+    return (
+      <>
+        Review total <strong>{totalReviews}</strong> | Last reviewed by
+        <strong>{name}</strong> {premium ? "⭐️ " : ""}
+      </>
+    );
+  }
   return (
     <div>
       <div className="review">
@@ -31,10 +40,13 @@ function App() {
           <img src="https://source.unsplash.com/random" alt="" />
         </div>
         <div className="review-info">
-          Review total <strong>3</strong> | Last reviewed by
-          <strong>TrWinddev</strong> ⭐️
-        </div>{" "}
-      </div>{" "}
+          {displayReview(
+            reviews.length,
+            reviews[0].name,
+            reviews[1].premiumUser
+          )}
+        </div>
+      </div>
     </div>
   );
 }
