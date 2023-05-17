@@ -22,8 +22,26 @@ const reviews = [
     date: "04/08/2022",
   },
 ];
+
 function App() {
   const [count, setCount] = useState(0);
+
+  //const obj: {} = {}
+  const user: {
+    firstName: string;
+    lastName: string;
+    age: number;
+    isStudent: boolean;
+    school: string[];
+    score: (number | string)[];
+  } = {
+    firstName: "Ngo",
+    lastName: "Trong",
+    age: 21,
+    isStudent: true,
+    school: ["Phenikaa", "PKA", "PU"],
+    score: [10, 9, 8, "high"],
+  };
 
   function displayReview(totalReviews: number, name: string, premium: boolean) {
     return (
@@ -45,6 +63,7 @@ function App() {
             reviews[0].name,
             reviews[1].premiumUser
           )}
+          {user.age}
         </div>
       </div>
     </div>
